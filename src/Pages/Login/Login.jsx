@@ -3,6 +3,10 @@ import React from 'react';
 const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
     }
     return (
         <div className='min-h-[calc(100vh-130px)] flex flex-col items-center justify-center'>
