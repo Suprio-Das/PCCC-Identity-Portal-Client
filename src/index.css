@@ -1,2 +1,7 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+.active {
+    font-weight: bold;
+    color: rgb(46, 102, 206);
+}

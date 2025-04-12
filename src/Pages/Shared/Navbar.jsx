@@ -10,7 +10,7 @@ const Navbar = () => {
             <div className="flex-none">
                 <ul className="menu menu-horizontal px-1">
                     <li><NavLink to='/'>Home</NavLink></li>
-                    <li><NavLink>Login</NavLink></li>
+                    <li><NavLink to='/login'>Login</NavLink></li>
                 </ul>
             </div>
         </div>
