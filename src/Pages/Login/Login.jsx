@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import AuthContext from '../../Context/AuthContext';
 
 const Login = () => {
-    const { loginWithEmailAndPassword, loading } = useContext(AuthContext);
+    const { loginWithEmailAndPassword } = useContext(AuthContext);
     const handleLogin = (e) => {
         e.preventDefault();
         const form = e.target;
