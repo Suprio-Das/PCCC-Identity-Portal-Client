@@ -1,12 +1,15 @@
 import React from 'react';
 
 const Login = () => {
+    const handleLogin = (e) => {
+        e.preventDefault();
+    }
     return (
         <div className='min-h-[calc(100vh-130px)] flex flex-col items-center justify-center'>
             <h1 className='my-3 lg:text-3xl text-lg font-semibold'>Login</h1>
             <div className="card w-full max-w-sm shrink-0 shadow-2xl border-1">
                 <div className="card-body">
-                    <form className="fieldset">
+                    <form onSubmit={handleLogin} className="fieldset">
                         <label className="fieldset-label">Email</label>
                         <input type="email" className="input" name='email' placeholder="Email" />
                         <label className="fieldset-label">Password</label>
