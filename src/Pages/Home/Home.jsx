@@ -8,6 +8,7 @@ const Home = () => {
                     <img src={Logo} alt="Logo" className='w-38 my-3' />
                 </div>
                 <h1 className='lg:text-5xl text-xl font-semibold text-center text-blue-500'>PCCC Identity Portal</h1>
+                <p className='text-center my-2'>Hola, Admin. Please Login to Identify Club Members.</p>
             </div>
         </div>
     );
