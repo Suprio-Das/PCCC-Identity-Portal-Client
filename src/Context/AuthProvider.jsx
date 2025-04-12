@@ -23,6 +23,7 @@ const AuthProvider = ({ children }) => {
     }, [])
 
     const authInfo = {
+        user,
         loading,
         loginWithEmailAndPassword
     }
