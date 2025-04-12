@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Logo from '../../assets/PCIU-Computer-Club-Logo.png'
 
 const Home = () => {
@@ -9,6 +10,9 @@ const Home = () => {
                 </div>
                 <h1 className='lg:text-5xl text-xl font-semibold text-center text-blue-500'>PCCC Identity Portal</h1>
                 <p className='text-center my-2'>Hola, Admin. Please Login to Identify Club Members.</p>
+                <div className='flex justify-center'>
+                    <Link to='/login' className='btn bg-blue-500 text-white my-3'>Login</Link>
+                </div>
             </div>
         </div>
     );
