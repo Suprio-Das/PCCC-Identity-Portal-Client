@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import AuthContext from '../../Context/AuthContext';
 
 const Login = () => {
+    const { loginWithEmailAndPassword, loading } = useContext(AuthContext);
     const handleLogin = (e) => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+
+        // Login Using firebase
+        loginWithEmailAndPassword(email, password)
+            .then(res => {
+                const user = res.user;
+                console.log(user);
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
     }
     return (
         <div className='min-h-[calc(100vh-130px)] flex flex-col items-center justify-center'>
