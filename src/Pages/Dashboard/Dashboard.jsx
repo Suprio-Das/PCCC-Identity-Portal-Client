@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { RiVerifiedBadgeFill } from "react-icons/ri";
 
 const studentData = [
     { id: 'CSE 02807546', name: 'Alex' },
@@ -78,7 +79,7 @@ const Dashboard = () => {
 
                 {matchedStudent && (
                     <div className='mt-5 p-4 bg-green-50 border border-green-300 rounded-lg text-green-700'>
-                        <p className='font-semibold'>✅ Student Found: {matchedStudent.name}</p>
+                        <p className='font-semibold flex items-center gap-0.5'><RiVerifiedBadgeFill /> Student Found: {matchedStudent.name}</p>
                         <button className='mt-3 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition'>
                             View Details
                         </button>
