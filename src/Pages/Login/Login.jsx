@@ -21,7 +21,11 @@ const Login = () => {
                 }
             })
             .catch(error => {
-                console.log(error.message);
+                if (error.message) {
+                    toast.error('Enter valid login credentials!', {
+                        position: 'top-center'
+                    })
+                }
             })
     }
     return (
