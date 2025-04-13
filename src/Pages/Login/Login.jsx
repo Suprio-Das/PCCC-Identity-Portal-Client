@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import AuthContext from '../../Context/AuthContext';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Login = () => {
     const { loginWithEmailAndPassword } = useContext(AuthContext);
@@ -13,7 +14,11 @@ const Login = () => {
         loginWithEmailAndPassword(email, password)
             .then(res => {
                 const user = res.user;
-                console.log(user);
+                if (user) {
+                    toast.success('Logged-in successfully!', {
+                        position: 'top-center'
+                    })
+                }
             })
             .catch(error => {
                 console.log(error.message);
@@ -33,6 +38,8 @@ const Login = () => {
                         <button type='submit' className="btn bg-blue-500 text-white mt-4">Login</button>
                     </form>
                 </div>
+                {/* Toast Container */}
+                <ToastContainer></ToastContainer>
             </div>
         </div>
     );
