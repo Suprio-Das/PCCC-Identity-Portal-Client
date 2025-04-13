@@ -4,6 +4,9 @@ import AuthContext from '../Context/AuthContext';
 
 const PrivateRoutes = () => {
     const { user, loading } = useContext(AuthContext);
+    if (loading) {
+        return <p>Data is loading...</p>
+    }
     return (
         <Navigate to='/login'></Navigate>
     );
