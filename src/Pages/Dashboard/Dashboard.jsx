@@ -80,7 +80,7 @@ const Dashboard = () => {
                 {matchedStudent && (
                     <div className='mt-5 p-4 bg-green-50 border border-green-300 rounded-lg text-green-700'>
                         <p className='font-semibold flex items-center gap-0.5'><RiVerifiedBadgeFill /> Student Found: {matchedStudent.name}</p>
-                        <button className='mt-3 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition'>
+                        <button className='btn mt-3 w-full bg-blue-500 text-white rounded-md cursor-pointer hover:bg-blue-600 transition'>
                             View Details
                         </button>
                     </div>
