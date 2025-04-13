@@ -48,9 +48,9 @@ const Dashboard = () => {
     };
 
     return (
-        <div className='min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 px-4'>
+        <div className='min-h-[calc(100vh-70px)] flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 px-4'>
             <div className='w-full max-w-md p-8 bg-white shadow-xl rounded-2xl'>
-                <h2 className='text-2xl font-bold text-center text-blue-600 mb-6'>🔍 Search Student by ID</h2>
+                <h2 className='text-2xl font-bold text-center text-blue-600 mb-6'>Identify Student by ID</h2>
 
                 <input
                     type='text'
