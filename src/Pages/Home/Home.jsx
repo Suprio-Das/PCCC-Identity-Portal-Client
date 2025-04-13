@@ -18,7 +18,9 @@ const Home = () => {
                     }
                 </p>
                 <div className='flex justify-center'>
-                    <Link to='/login' className='btn bg-blue-500 text-white my-3'>Login</Link>
+                    {
+                        user ? <Link to='/dashboard' className='btn bg-blue-500 text-white my-3'>Dashboard</Link> : <Link to='/login' className='btn bg-blue-500 text-white my-3'>Login</Link>
+                    }
                 </div>
             </div>
         </div>
