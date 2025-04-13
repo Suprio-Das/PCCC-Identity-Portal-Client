@@ -51,7 +51,7 @@ const Dashboard = () => {
     return (
         <div className='min-h-[calc(100vh-70px)] flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 px-4'>
             <div className='w-full max-w-md p-8 bg-white shadow-xl rounded-2xl'>
-                <h2 className='text-2xl font-bold text-center text-blue-600 mb-6'>Identify Student by ID</h2>
+                <h2 className='text-2xl font-bold text-center text-blue-500 mb-6'>Identify Student by ID</h2>
 
                 <input
                     type='text'
@@ -80,7 +80,7 @@ const Dashboard = () => {
                 {matchedStudent && (
                     <div className='mt-5 p-4 bg-green-50 border border-green-300 rounded-lg text-green-700'>
                         <p className='font-semibold flex items-center gap-0.5'><RiVerifiedBadgeFill /> Student Found: {matchedStudent.name}</p>
-                        <button className='mt-3 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition'>
+                        <button className='mt-3 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition'>
                             View Details
                         </button>
                     </div>
