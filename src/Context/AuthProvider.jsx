@@ -5,10 +5,9 @@ import { onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebas
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     const loginWithEmailAndPassword = (email, password) => {
-        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
