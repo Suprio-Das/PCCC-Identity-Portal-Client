@@ -18,6 +18,8 @@ const Login = () => {
                     toast.success('Logged-in successfully!', {
                         position: 'top-center'
                     })
+
+                    form.reset();
                 }
             })
             .catch(error => {
