@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import AuthContext from '../../Context/AuthContext';
 import { toast, ToastContainer } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const { loginWithEmailAndPassword } = useContext(AuthContext);
+    const navigate = useNavigate();
     const handleLogin = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -19,6 +21,7 @@ const Login = () => {
                         position: 'top-center'
                     })
 
+                    navigate('/dashboard');
                     form.reset();
                 }
             })
