@@ -20,6 +20,9 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal px-1">
                     <li><NavLink to="/">Home</NavLink></li>
                     {
+                        user ? <li><NavLink to="/dashboard">Dashboard</NavLink></li> : ''
+                    }
+                    {
                         user
                             ? <li><button onClick={handleLogOutUser}>Logout</button></li>
                             : <li><NavLink to="/login">Login</NavLink></li>
