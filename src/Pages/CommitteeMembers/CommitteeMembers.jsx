@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 
 const CommitteeMembers = () => {
     const loadedData = useLoaderData();
     const [committeeMembers, setCommitteeMembers] = useState(loadedData);
+
+    const handleUpdate = id => {
+        toast.info('Feature is in progress!', {
+            position: 'top-center'
+        })
+    }
     return (
         <div className='w-[90%] mx-auto my-5'>
             <h1 className='mt-3 mb-11 lg:text-3xl text-xl font-semibold text-blue-500 text-center'>Committee Members Info</h1>
@@ -30,16 +37,19 @@ const CommitteeMembers = () => {
                             </p>
 
                             <div className='mt-6 flex gap-4 justify-center'>
-                                <button className='bg-blue-500 hover:bg-blue-600 text-white cursor-pointer px-4 py-2 rounded-lg transition'>
+                                <button onClick={() => handleUpdate(member._id)} className='bg-blue-500 hover:bg-blue-600 text-white cursor-pointer px-4 py-2 rounded-lg transition'>
                                     Update
                                 </button>
-                                <button className='bg-red-500 hover:bg-red-600 text-white cursor-pointer px-4 py-2 rounded-lg transition'>
+                                <button onClick={() => handleDelete(member._id)} className='bg-red-500 hover:bg-red-600 text-white cursor-pointer px-4 py-2 rounded-lg transition'>
                                     Delete
                                 </button>
                             </div>
                         </div>
                     </div>)
                 }
+
+                {/* Toast Container */}
+                <ToastContainer></ToastContainer>
             </div>
         </div>
     );
