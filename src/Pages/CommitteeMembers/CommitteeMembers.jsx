@@ -6,6 +6,7 @@ const CommitteeMembers = () => {
     const [committeeMembers, setCommitteeMembers] = useState(loadedData);
     return (
         <div className='w-[90%] mx-auto my-5'>
+            <h1 className='mt-3 mb-11 lg:text-3xl text-md font-semibold text-blue-500 text-center'>Committee Members Info</h1>
             <div className='w-full max-w-sm rounded-xl overflow-hidden shadow-xl bg-white'>
                 <div className='profile-card h-24 relative'>
                     <div className='absolute -bottom-12 left-1/2 transform -translate-x-1/2'>
