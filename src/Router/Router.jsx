@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import PrivateRoutes from "./PrivateRoutes";
 import Dashboard from "../Pages/Dashboard/Dashboard";
+import ViewProfile from "../Pages/ViewProfile/ViewProfile";
 
 const router = createBrowserRouter([
     {
@@ -24,6 +25,12 @@ const router = createBrowserRouter([
                     <Dashboard></Dashboard>
                 </PrivateRoutes>,
                 loader: () => fetch('http://localhost:5000/clubMembers')
+            },
+            {
+                path: '/viewProfile',
+                element: <PrivateRoutes>
+                    <ViewProfile></ViewProfile>
+                </PrivateRoutes>
             }
         ]
     }
