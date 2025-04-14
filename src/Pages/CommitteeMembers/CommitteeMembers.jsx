@@ -6,7 +6,7 @@ const CommitteeMembers = () => {
     const [committeeMembers, setCommitteeMembers] = useState(loadedData);
     return (
         <div className='w-[90%] mx-auto my-5'>
-            <h1 className='mt-3 mb-11 lg:text-3xl text-md font-semibold text-blue-500 text-center'>Committee Members Info</h1>
+            <h1 className='mt-3 mb-11 lg:text-3xl text-xl font-semibold text-blue-500 text-center'>Committee Members Info</h1>
             <div className='grid lg:grid-cols-3 grid-cols-1 gap-x-5 gap-y-8 justify-items-center'>
                 {
                     committeeMembers.map(member => <div key={member._id} className='w-full max-w-sm rounded-xl overflow-hidden shadow-xl bg-white'>
