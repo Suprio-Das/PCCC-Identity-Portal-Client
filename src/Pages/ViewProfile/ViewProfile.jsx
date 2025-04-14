@@ -15,6 +15,11 @@ const ViewProfile = () => {
             position: 'top-right'
         })
     }
+    const handleDelete = id => {
+        toast.info("Feature isn't available right now!", {
+            position: 'top-right'
+        })
+    }
 
     return (
         <div className='min-h-[calc(100vh-130px)] flex items-center justify-center px-4'>
@@ -41,7 +46,7 @@ const ViewProfile = () => {
                         <button onClick={() => handleUpdate(matchedStudent._id)} className='bg-blue-500 hover:bg-blue-600 text-white cursor-pointer px-4 py-2 rounded-lg transition'>
                             Update
                         </button>
-                        <button className='bg-red-500 hover:bg-red-600 text-white cursor-pointer px-4 py-2 rounded-lg transition'>
+                        <button onClick={() => handleDelete(matchedStudent._id)} className='bg-red-500 hover:bg-red-600 text-white cursor-pointer px-4 py-2 rounded-lg transition'>
                             Delete
                         </button>
                     </div>
