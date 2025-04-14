@@ -31,10 +31,10 @@ const ViewProfile = () => {
                     </p>
 
                     <div className='mt-6 flex gap-4 justify-center'>
-                        <button className='bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition'>
+                        <button className='bg-blue-500 hover:bg-blue-600 text-white cursor-pointer px-4 py-2 rounded-lg transition'>
                             Update
                         </button>
-                        <button className='bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition'>
+                        <button className='bg-red-500 hover:bg-red-600 text-white cursor-pointer px-4 py-2 rounded-lg transition'>
                             Delete
                         </button>
                     </div>
