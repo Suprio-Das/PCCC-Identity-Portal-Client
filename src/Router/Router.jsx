@@ -37,7 +37,8 @@ const router = createBrowserRouter([
                 path: '/committeeMembers',
                 element: <PrivateRoutes>
                     <CommitteeMembers></CommitteeMembers>
-                </PrivateRoutes>
+                </PrivateRoutes>,
+                loader: () => fetch('https://pccc-identity-portal-server.onrender.com/committeeMembers')
             }
         ]
     }
