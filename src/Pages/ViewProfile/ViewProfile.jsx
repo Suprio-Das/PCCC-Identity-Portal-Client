@@ -36,10 +36,10 @@ const ViewProfile = () => {
 
                 <div className='mt-16 text-center px-6 pb-6'>
                     <h2 className='text-xl font-bold text-gray-800'>{matchedStudent.Name}</h2>
-                    <p className='text-sm text-gray-500'>{matchedStudent.Batch}</p>
-                    <p className='text-sm text-gray-500'>{matchedStudent.StudentId}</p>
-                    <p className='text-sm text-gray-500'>
-                        {matchedStudent.ContactNo === 'null' ? 'Not Found' : matchedStudent.ContactNo}
+                    <p className='text-sm text-gray-500'>Batch: {matchedStudent.Batch}</p>
+                    <p className='text-sm text-gray-500'>ID: {matchedStudent.StudentId}</p>
+                    <p className='text-sm text-gray-500'>Phone:
+                        {matchedStudent.ContactNo === 'null' ? ' Not Found' : matchedStudent.ContactNo}
                     </p>
 
                     <div className='mt-6 flex gap-4 justify-center'>
