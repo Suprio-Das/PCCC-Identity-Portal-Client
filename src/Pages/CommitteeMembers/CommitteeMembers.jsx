@@ -22,7 +22,7 @@ const CommitteeMembers = () => {
 
                         <div className='mt-16 text-center px-6 pb-6'>
                             <h2 className='text-xl font-bold text-gray-800'>{member?.Name}</h2>
-                            <p className='text-sm text-gray-500'>Designation: IT Secretary</p>
+                            <p className='text-sm text-gray-500'><span className='font-semibold'>Designation:</span> {member?.Designation}</p>
                             <p className='text-sm text-gray-500'>Batch: 28 D</p>
                             <p className='text-sm text-gray-500'>ID: CSE 028 07546</p>
                             <p className='text-sm text-gray-500'>Phone:
