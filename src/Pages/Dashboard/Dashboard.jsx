@@ -4,7 +4,6 @@ import { useLoaderData } from 'react-router-dom';
 
 const Dashboard = () => {
     const studentData = useLoaderData();
-    console.log(studentData);
     const [digitsOnly, setDigitsOnly] = useState('');
     const [focused, setFocused] = useState(false);
     const [suggestions, setSuggestions] = useState([]);
@@ -24,12 +23,12 @@ const Dashboard = () => {
         }
 
         const filtered = studentData.filter(student =>
-            student.id.startsWith(fullInput)
+            student?.StudentId?.startsWith(fullInput)
         );
         setSuggestions(filtered);
-        setHighlightIndex(0); // Reset highlight to top
+        setHighlightIndex(0);
 
-        const exactMatch = studentData.find(student => student.id === fullInput);
+        const exactMatch = studentData.find(student => student?.StudentId === fullInput);
         if (exactMatch) {
             setMatchedStudent(exactMatch);
             setNotFound(false);
@@ -92,12 +91,12 @@ const Dashboard = () => {
                     <ul className='bg-white mt-2 rounded-lg border border-gray-200 shadow-sm overflow-y-auto max-h-60'>
                         {suggestions.map((student, index) => (
                             <li
-                                key={student.id}
+                                key={student.StudentId}
                                 className={`px-4 py-2 cursor-pointer transition duration-200 ${index === highlightIndex ? 'bg-blue-100 font-medium' : 'hover:bg-blue-50'
                                     }`}
-                                onMouseDown={() => setDigitsOnly(student.id.replace('CSE ', ''))}
+                                onMouseDown={() => setDigitsOnly(student.StudentId.replace('CSE ', ''))}
                             >
-                                {highlightMatch(student.id)}
+                                {highlightMatch(student.StudentId)}
                             </li>
                         ))}
                     </ul>
@@ -105,7 +104,7 @@ const Dashboard = () => {
 
                 {matchedStudent && (
                     <div className='mt-5 p-4 bg-green-50 border border-green-300 rounded-lg text-green-700'>
-                        <p className='font-semibold flex items-center gap-1'><RiVerifiedBadgeFill /> Student Found: {matchedStudent.name}</p>
+                        <p className='font-semibold flex items-center gap-1'><RiVerifiedBadgeFill /> Student Found: {matchedStudent.Name}</p>
                         <button className='btn mt-3 w-full bg-blue-500 text-white rounded-md hover:bg-blue-600 transition'>
                             View Details
                         </button>
