@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { RiVerifiedBadgeFill } from "react-icons/ri";
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Dashboard = () => {
     const studentData = useLoaderData();
@@ -110,9 +110,9 @@ const Dashboard = () => {
                 {matchedStudent && (
                     <div className='mt-5 p-4 bg-green-50 border border-green-300 rounded-lg text-green-700'>
                         <p className='font-semibold flex items-center gap-1'><RiVerifiedBadgeFill /> Student Found: {matchedStudent.Name}</p>
-                        <button className='btn mt-3 w-full bg-blue-500 text-white rounded-md hover:bg-blue-600 transition'>
+                        <Link to='/viewProfile' state={{ matchedStudent }} className='btn mt-3 w-full bg-blue-500 text-white rounded-md hover:bg-blue-600 transition'>
                             View Details
-                        </button>
+                        </Link>
                     </div>
                 )}
 
