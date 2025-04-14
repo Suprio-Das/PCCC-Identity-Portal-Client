@@ -22,19 +22,22 @@ const Dashboard = () => {
             return;
         }
 
-        const filtered = studentData.filter(student =>
-            student?.StudentId?.startsWith(fullInput)
-        );
-        setSuggestions(filtered);
-        setHighlightIndex(0);
-
         const exactMatch = studentData.find(student => student?.StudentId === fullInput);
+
         if (exactMatch) {
             setMatchedStudent(exactMatch);
+            setSuggestions([]); // ✅ Don't show others
+            setHighlightIndex(-1);
             setNotFound(false);
         } else {
+            const filtered = studentData.filter(student =>
+                student?.StudentId?.startsWith(fullInput)
+            );
+            setSuggestions(filtered);
             setMatchedStudent(null);
+            setHighlightIndex(filtered.length > 0 ? 0 : -1);
             if (digitsOnly.length >= 4) setNotFound(true);
+            else setNotFound(false);
         }
     }, [digitsOnly]);
 
@@ -54,7 +57,7 @@ const Dashboard = () => {
             setHighlightIndex((prev) => (prev - 1 + suggestions.length) % suggestions.length);
         } else if (e.key === 'Enter' && highlightIndex >= 0) {
             const selected = suggestions[highlightIndex];
-            setDigitsOnly(selected.id.replace('CSE ', ''));
+            setDigitsOnly(selected.StudentId.replace('CSE ', ''));
             setSuggestions([]);
         }
     };
@@ -81,7 +84,10 @@ const Dashboard = () => {
                     value={focused ? fullInput : digitsOnly}
                     onChange={handleInputChange}
                     onFocus={() => setFocused(true)}
-                    onBlur={() => setFocused(false)}
+                    onBlur={() => {
+                        setFocused(false);
+                        setSuggestions([]);
+                    }}
                     onKeyDown={handleKeyDown}
                     placeholder='Type the id number only'
                     className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 font-mono'
@@ -92,8 +98,7 @@ const Dashboard = () => {
                         {suggestions.map((student, index) => (
                             <li
                                 key={student.StudentId}
-                                className={`px-4 py-2 cursor-pointer transition duration-200 ${index === highlightIndex ? 'bg-blue-100 font-medium' : 'hover:bg-blue-50'
-                                    }`}
+                                className={`px-4 py-2 cursor-pointer transition duration-200 ${index === highlightIndex ? 'bg-blue-100 font-medium' : 'hover:bg-blue-50'}`}
                                 onMouseDown={() => setDigitsOnly(student.StudentId.replace('CSE ', ''))}
                             >
                                 {highlightMatch(student.StudentId)}
