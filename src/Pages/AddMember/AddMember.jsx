@@ -1,9 +1,9 @@
-import React from 'react';
+import { MdConstruction } from "react-icons/md";
 
 const AddMember = () => {
     return (
-        <div className='min-h[calc(100vh-70px)] flex items-center justify-center'>
-            <h1>This Page is under construction</h1>
+        <div className='min-h-[calc(100vh-130px)] flex items-center justify-center'>
+            <h1 className='text-2xl font-semibold flex items-center gap-3'><MdConstruction /> This Page is under construction <MdConstruction /></h1>
         </div>
     );
 };
