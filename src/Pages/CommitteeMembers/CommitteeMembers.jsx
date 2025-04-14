@@ -13,7 +13,7 @@ const CommitteeMembers = () => {
                         <div className='profile-card h-24 relative'>
                             <div className='absolute -bottom-12 left-1/2 transform -translate-x-1/2'>
                                 <img
-                                    src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'
+                                    src={member?.Profile}
                                     alt='Profile'
                                     className='w-24 h-24 rounded-full border-4 border-white bg-white'
                                 />
