@@ -1,22 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { RiVerifiedBadgeFill } from "react-icons/ri";
-
-const studentData = [
-    { id: 'CSE 02807546', name: 'Alex' },
-    { id: 'CSE 02807547', name: 'Duplex' },
-    { id: 'CSE 02807548', name: 'Half-Duplex' },
-    { id: 'CSE 02807549', name: 'Full-Duplex' },
-    { id: 'CSE 02707549', name: 'Full-Duplex' },
-    // Add your 300+ data here...
-];
+import { useLoaderData } from 'react-router-dom';
 
 const Dashboard = () => {
+    const studentData = useLoaderData();
+    console.log(studentData);
     const [digitsOnly, setDigitsOnly] = useState('');
     const [focused, setFocused] = useState(false);
     const [suggestions, setSuggestions] = useState([]);
     const [matchedStudent, setMatchedStudent] = useState(null);
     const [notFound, setNotFound] = useState(false);
-    const [highlightIndex, setHighlightIndex] = useState(-1); // For keyboard
+    const [highlightIndex, setHighlightIndex] = useState(-1);
 
     const fullInput = `CSE ${digitsOnly}`;
 

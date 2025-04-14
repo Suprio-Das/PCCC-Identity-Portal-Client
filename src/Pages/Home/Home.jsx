@@ -7,7 +7,7 @@ import Loader from '../Shared/Loader';
 const Home = () => {
     const { user, loading } = useContext(AuthContext);
     return (
-        <div className='min-h-[calc(100vh-80px)] flex items-center justify-center'>
+        <div className='min-h-[calc(100vh-130px)] flex items-center justify-center'>
             {
                 loading ? <Loader></Loader> :
                     (<div>

@@ -22,7 +22,8 @@ const router = createBrowserRouter([
                 path: '/dashboard',
                 element: <PrivateRoutes>
                     <Dashboard></Dashboard>
-                </PrivateRoutes>
+                </PrivateRoutes>,
+                loader: () => fetch('http://localhost:5000/clubMembers')
             }
         ]
     }
