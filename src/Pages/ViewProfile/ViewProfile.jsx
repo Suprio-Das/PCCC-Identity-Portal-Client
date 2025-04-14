@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 
 const ViewProfile = () => {
     const { state } = useLocation();
@@ -7,6 +8,12 @@ const ViewProfile = () => {
 
     if (!matchedStudent) {
         return <p className='text-center mt-10 text-red-600'>No student data found</p>;
+    }
+
+    const handleUpdate = id => {
+        toast.info("Feature isn't available right now!", {
+            position: 'top-right'
+        })
     }
 
     return (
@@ -31,13 +38,16 @@ const ViewProfile = () => {
                     </p>
 
                     <div className='mt-6 flex gap-4 justify-center'>
-                        <button className='bg-blue-500 hover:bg-blue-600 text-white cursor-pointer px-4 py-2 rounded-lg transition'>
+                        <button onClick={() => handleUpdate(matchedStudent._id)} className='bg-blue-500 hover:bg-blue-600 text-white cursor-pointer px-4 py-2 rounded-lg transition'>
                             Update
                         </button>
                         <button className='bg-red-500 hover:bg-red-600 text-white cursor-pointer px-4 py-2 rounded-lg transition'>
                             Delete
                         </button>
                     </div>
+
+                    {/* Toast Container */}
+                    <ToastContainer></ToastContainer>
                 </div>
             </div>
         </div>
