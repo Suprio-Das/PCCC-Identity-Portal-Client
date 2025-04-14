@@ -5,7 +5,7 @@ const CommitteeMembers = () => {
     const loadedData = useLoaderData();
     const [committeeMembers, setCommitteeMembers] = useState(loadedData);
     return (
-        <div>
+        <div className='w-[90%] mx-auto my-5'>
             <div className='w-full max-w-sm rounded-xl overflow-hidden shadow-xl bg-white'>
                 <div className='profile-card h-24 relative'>
                     <div className='absolute -bottom-12 left-1/2 transform -translate-x-1/2'>
