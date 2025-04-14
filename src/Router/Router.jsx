@@ -24,7 +24,7 @@ const router = createBrowserRouter([
                 element: <PrivateRoutes>
                     <Dashboard></Dashboard>
                 </PrivateRoutes>,
-                loader: () => fetch('http://localhost:5000/clubMembers')
+                loader: () => fetch('https://pccc-identity-portal-server.onrender.com/clubMembers')
             },
             {
                 path: '/viewProfile',
