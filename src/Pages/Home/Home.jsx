@@ -14,7 +14,7 @@ const Home = () => {
                         <div className='flex justify-center'>
                             <img src={Logo} alt="Logo" className='w-38 my-3' />
                         </div>
-                        <h1 className='lg:text-5xl text-xl font-semibold text-center text-blue-500'>PCCC Identity Portal</h1>
+                        <h1 className='lg:text-5xl text-xl font-semibold text-center text-blue-500'>PCC Identity Portal</h1>
                         <p className='text-center my-2'>
                             {
                                 user ? 'Hola, Admin! You have access now. Try to do something cOOl.' : 'Hola, Admin. Please Login to Identify Club Members.'

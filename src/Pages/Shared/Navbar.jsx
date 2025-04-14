@@ -44,7 +44,7 @@ const Navbar = () => {
                 </div>
                 <div className='flex items-center gap-2'>
                     <img src={PCIU_Computer_Club_Logo} alt="PCCC_Identity_Logo" className='w-[60px]' />
-                    <Link to='/' className='lg:text-xl text-md font-semibold'>PCCC Identity Portal</Link>
+                    <Link to='/' className='lg:text-xl text-md font-semibold'>PCC Identity Portal</Link>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
