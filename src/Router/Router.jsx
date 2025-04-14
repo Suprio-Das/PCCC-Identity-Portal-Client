@@ -6,6 +6,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import ViewProfile from "../Pages/ViewProfile/ViewProfile";
 import CommitteeMembers from "../Pages/CommitteeMembers/CommitteeMembers";
+import AddMember from "../Pages/AddMember/AddMember";
 
 const router = createBrowserRouter([
     {
@@ -39,6 +40,12 @@ const router = createBrowserRouter([
                     <CommitteeMembers></CommitteeMembers>
                 </PrivateRoutes>,
                 loader: () => fetch('https://pccc-identity-portal-server.onrender.com/committeeMembers')
+            },
+            {
+                path: '/addMember',
+                element: <PrivateRoutes>
+                    <AddMember></AddMember>
+                </PrivateRoutes>
             }
         ]
     }
