@@ -11,6 +11,11 @@ const CommitteeMembers = () => {
             position: 'top-center'
         })
     }
+    const handleDelete = id => {
+        toast.info('Feature is in progress!', {
+            position: 'top-center'
+        })
+    }
     return (
         <div className='w-[90%] mx-auto my-5'>
             <h1 className='mt-3 mb-11 lg:text-3xl text-xl font-semibold text-blue-500 text-center'>Committee Members Info</h1>
