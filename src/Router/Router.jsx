@@ -5,6 +5,7 @@ import Login from "../Pages/Login/Login";
 import PrivateRoutes from "./PrivateRoutes";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import ViewProfile from "../Pages/ViewProfile/ViewProfile";
+import CommitteeMembers from "../Pages/CommitteeMembers/CommitteeMembers";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,12 @@ const router = createBrowserRouter([
                 path: '/viewProfile',
                 element: <PrivateRoutes>
                     <ViewProfile></ViewProfile>
+                </PrivateRoutes>
+            },
+            {
+                path: '/committeeMembers',
+                element: <PrivateRoutes>
+                    <CommitteeMembers></CommitteeMembers>
                 </PrivateRoutes>
             }
         ]
