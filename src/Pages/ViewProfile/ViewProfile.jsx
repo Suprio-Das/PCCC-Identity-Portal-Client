@@ -6,8 +6,8 @@ const ViewProfile = () => {
     const matchedStudent = state?.matchedStudent;
     console.log(matchedStudent);
     return (
-        <div>
-            This is view profile page.
+        <div className='min-h-[calc(100vh-130px)] flex items-center justify-center'>
+            <h1>Student Name: {matchedStudent.Name}</h1>
         </div>
     );
 };
