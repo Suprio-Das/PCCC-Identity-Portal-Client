@@ -28,6 +28,15 @@ const Navbar = () => {
                                 >
                                     <li><NavLink to="/">Home</NavLink></li>
                                     <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+                                    <li>
+                                        <details>
+                                            <summary>Control</summary>
+                                            <ul className="p-2">
+                                                <li><NavLink to="/addMember">Add Member</NavLink></li>
+                                                <li><NavLink to='/committeeMembers'>Committee Members</NavLink></li>
+                                            </ul>
+                                        </details>
+                                    </li>
                                 </ul>
                             </>
                         )
@@ -35,7 +44,7 @@ const Navbar = () => {
                 </div>
                 <div className='flex items-center gap-2'>
                     <img src={PCIU_Computer_Club_Logo} alt="PCCC_Identity_Logo" className='w-[60px]' />
-                    <Link to='/' className='text-xl font-semibold'>PCCC Identity Portal</Link>
+                    <Link to='/' className='lg:text-xl text-md font-semibold'>PCCC Identity Portal</Link>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -44,6 +53,15 @@ const Navbar = () => {
                         <ul className="menu menu-horizontal px-1">
                             <li><NavLink to="/">Home</NavLink></li>
                             <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+                            <li>
+                                <details>
+                                    <summary>Control</summary>
+                                    <ul className="p-2">
+                                        <li><NavLink to="/addMember">Add Member</NavLink></li>
+                                        <li><NavLink to='/committeeMembers'>Committee Members</NavLink></li>
+                                    </ul>
+                                </details>
+                            </li>
                         </ul>
                     )
                 }
