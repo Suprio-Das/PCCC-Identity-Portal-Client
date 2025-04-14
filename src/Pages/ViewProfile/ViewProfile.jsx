@@ -7,7 +7,9 @@ const ViewProfile = () => {
     console.log(matchedStudent);
     return (
         <div className='min-h-[calc(100vh-130px)] flex items-center justify-center'>
-            <h1>Student Name: {matchedStudent.Name}</h1>
+            <div className='profile-card max-w-md p-5'>
+                <h1>Name: {matchedStudent.Name}</h1>
+            </div>
         </div>
     );
 };
