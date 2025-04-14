@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 const CommitteeMembers = () => {
     const loadedData = useLoaderData();
-    console.log(loadedData);
+    const [committeeMembers, setCommitteeMembers] = useState(loadedData);
     return (
         <div>
             This is committee members page.
