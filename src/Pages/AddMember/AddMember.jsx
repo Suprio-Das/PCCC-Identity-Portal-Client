@@ -6,7 +6,7 @@ const AddMember = () => {
             <h1 className="lg:text-3xl font-semibold text-blue-500 mb-8">Add New Club Member</h1>
             {/* Add Member Form */}
             <div>
-                <form>
+                <form className="grid lg:grid-cols-2 gap-5">
                     {/* Name */}
                     <fieldset className="fieldset">
                         <legend className="fieldset-legend">Enter Club Member Name</legend>
