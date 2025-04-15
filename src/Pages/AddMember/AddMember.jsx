@@ -12,6 +12,11 @@ const AddMember = () => {
                         <legend className="fieldset-legend">Enter Club Member Name</legend>
                         <input type="text" className="input w-sm" name="name" placeholder="Type Club Member here" />
                     </fieldset>
+                    {/* Batch */}
+                    <fieldset className="fieldset">
+                        <legend className="fieldset-legend">Enter Club Member Batch(e.g. 28)</legend>
+                        <input type="number" className="input w-sm" name="name" placeholder="Type Club Member Batch here" />
+                    </fieldset>
                 </form>
             </div>
         </div>
