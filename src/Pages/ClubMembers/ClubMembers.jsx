@@ -1,14 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsFillClipboardDataFill } from "react-icons/bs";
 
 const ClubMembers = () => {
-    const [search, setSearch] = useState([]);
+    const [search, setSearch] = useState("");
+    const [result, setResult] = useState([]);
     const handleSearch = (e) => {
         e.preventDefault();
         const form = e.target;
         const batch = form.batch.value;
-        setSearch(batch);
+        const section = form.section.value;
+        const formattedBatch = `CSE ${batch}-${section}`;
+        setSearch(formattedBatch);
     }
+
+    useEffect(() => {
+        if (search.length > 0) {
+            fetch(`http://localhost:5000/batchWiseClubMembers?batch=${search}`)
+                .then(res => res.json())
+                .then(data => setResult(data))
+        }
+    }, [search])
+
     return (
         <div className='w-[90%] mx-auto p-5'>
             <h1 className='lg:text-2xl font-semibold text-blue-500 flex items-center justify-center gap-2'>Find Batchwise Members Data <BsFillClipboardDataFill /></h1>
@@ -19,9 +31,16 @@ const ClubMembers = () => {
                     <div className="join">
                         <div>
                             <div>
-                                <input className="input join-item w-[200px]" name="batch" placeholder="Batch-Section(e.g. 28-A)" />
+                                <input type="number" className="input join-item w-[220px]" name="batch" placeholder="Batch-Section(e.g. 28-A)" />
                             </div>
                         </div>
+                        <select name="section" className="select join-item">
+                            <option disabled selected>Section</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                        </select>
                         <select className="select join-item" disabled>
                             <option disabled selected>Shift</option>
                             <option>Day</option>
