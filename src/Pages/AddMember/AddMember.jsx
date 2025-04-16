@@ -52,6 +52,7 @@ const AddMember = () => {
             },
             body: JSON.stringify(newMember)
         })
+            .then(res => res.json())
             .then(result => {
                 if (result.insertedId) {
                     toast.success("New Member Added Successfully!", {
@@ -60,9 +61,11 @@ const AddMember = () => {
                 }
             })
             .catch(error => {
-                toast.error("Failed to add New Member!", {
-                    position: 'top-right'
-                })
+                if (error.message) {
+                    toast.error("Failed to add New Member!", {
+                        position: 'top-right'
+                    })
+                }
             })
     }
 
