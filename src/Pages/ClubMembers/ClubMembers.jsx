@@ -61,7 +61,7 @@ const ClubMembers = () => {
             {/* Members Data */}
             <div className="overflow-x-auto mt-10">
                 <table className="min-w-full border border-gray-200 rounded-lg overflow-hidden">
-                    <thead className="bg-blue-600 text-white text-left text-sm uppercase tracking-wider">
+                    <thead className="table-header text-white text-left text-sm uppercase tracking-wider">
                         <tr>
                             <th className="px-6 py-3">No.</th>
                             <th className="px-6 py-3">Name</th>

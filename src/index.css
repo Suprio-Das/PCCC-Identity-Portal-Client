@@ -12,7 +12,8 @@
 }
 
 .add-member,
-.add-member-btn {
+.add-member-btn,
+.table-header {
     background-image: linear-gradient(to bottom, #0c3483 0%, rgb(69, 107, 183) 100%, #6b8cce 100%, #345caa 100%);
     color: white;
 }
