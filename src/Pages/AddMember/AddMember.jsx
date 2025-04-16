@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 const AddMember = () => {
     const [studentId, setStudentId] = useState("");
@@ -45,7 +45,7 @@ const AddMember = () => {
         const newMember = { Name, Batch, StudentId, ContactNo, Email };
 
         // Sending data to backend
-        fetch('https://pccc-identity-portal-server.onrender.com/clubMembers', {
+        fetch('http://localhost:5000/clubMembers', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -71,6 +71,8 @@ const AddMember = () => {
 
     return (
         <div className='min-h-[calc(100vh-130px)] flex flex-col items-center justify-center'>
+            {/* Toast Container */}
+            <ToastContainer></ToastContainer>
             {/* Add Member Form */}
             <div className="add-member px-11 py-8 rounded-md">
                 <h1 className="lg:text-3xl font-semibold text-white mb-8 text-center">Add New Club Member</h1>
