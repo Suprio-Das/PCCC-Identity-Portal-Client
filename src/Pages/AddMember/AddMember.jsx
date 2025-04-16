@@ -39,6 +39,7 @@ const AddMember = () => {
                             <input type="text" className="input w-sm" name="name" placeholder="Type Club Member Section here" />
                         </fieldset>
                     </div>
+                    <button className="btn add-member-btn w-full mt-5">Add Member</button>
                 </form>
             </div>
         </div>
