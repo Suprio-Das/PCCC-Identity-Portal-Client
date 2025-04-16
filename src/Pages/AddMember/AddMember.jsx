@@ -29,12 +29,18 @@ const AddMember = () => {
             setStudentId("CSE ");
         }
     };
+
+    // Collecting Form Data
+    const handleAddMember = (e) => {
+        e.preventDefault();
+        console.log("Add Member form clicked");
+    }
     return (
         <div className='min-h-[calc(100vh-130px)] flex flex-col items-center justify-center'>
             {/* Add Member Form */}
             <div className="add-member px-11 py-8 rounded-md">
                 <h1 className="lg:text-3xl font-semibold text-white mb-8 text-center">Add New Club Member</h1>
-                <form>
+                <form onSubmit={handleAddMember}>
                     <div className="grid lg:grid-cols-2 gap-5">
                         {/* Name */}
                         <fieldset className="fieldset">
