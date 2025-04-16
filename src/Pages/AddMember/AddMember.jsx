@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { MdConstruction } from "react-icons/md";
 
 const AddMember = () => {
     const [studentId, setStudentId] = useState("");
