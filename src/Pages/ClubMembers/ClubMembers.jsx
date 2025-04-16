@@ -7,7 +7,7 @@ const ClubMembers = () => {
         e.preventDefault();
         const form = e.target;
         const batch = form.batch.value;
-        console.log(batch);
+        setSearch(batch);
     }
     return (
         <div className='w-[90%] mx-auto p-5'>
