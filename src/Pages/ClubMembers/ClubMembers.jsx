@@ -1,17 +1,25 @@
+import { useState } from "react";
 import { BsFillClipboardDataFill } from "react-icons/bs";
 
 const ClubMembers = () => {
+    const [search, setSearch] = useState([]);
+    const handleSearch = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const batch = form.batch.value;
+        console.log(batch);
+    }
     return (
         <div className='w-[90%] mx-auto p-5'>
             <h1 className='lg:text-2xl font-semibold text-blue-500 flex items-center justify-center gap-2'>Find Batchwise Members Data <BsFillClipboardDataFill /></h1>
 
             {/* Filter */}
             <div className="flex items-center justify-center mt-5">
-                <form>
+                <form onSubmit={handleSearch}>
                     <div className="join">
                         <div>
                             <div>
-                                <input className="input join-item w-[200px]" placeholder="Batch-Section(e.g. 28-A)" />
+                                <input className="input join-item w-[200px]" name="batch" placeholder="Batch-Section(e.g. 28-A)" />
                             </div>
                         </div>
                         <select className="select join-item" disabled>
