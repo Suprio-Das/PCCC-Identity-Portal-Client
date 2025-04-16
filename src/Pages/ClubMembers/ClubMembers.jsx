@@ -9,10 +9,16 @@ const ClubMembers = () => {
         const form = e.target;
         const batch = form.batch.value;
         const section = form.section.value;
-        const formattedBatch = `CSE ${batch}-${section}`;
-        console.log(formattedBatch)
-        setSearch(formattedBatch);
+        if (section == 'A' || section == 'B' || section == 'C' || section == 'D') {
+            const formattedBatch = `CSE ${batch}-${section}`;
+            setSearch(formattedBatch);
+            console.log("Section")
+        } else {
+            const formattedBatch = `CSE ${batch}`
+            setSearch(formattedBatch);
+        }
         setResult([]);
+        form.reset();
     }
 
     useEffect(() => {
@@ -40,8 +46,8 @@ const ClubMembers = () => {
                                 <input type="number" className="input join-item w-[220px]" name="batch" placeholder="Batch-Section(e.g. 28-A)" />
                             </div>
                         </div>
-                        <select name="section" className="select join-item">
-                            <option disabled selected>Section</option>
+                        <select name="section" className="select join-item" defaultValue="">
+                            <option value="" disabled>Section</option>
                             <option>A</option>
                             <option>B</option>
                             <option>C</option>
