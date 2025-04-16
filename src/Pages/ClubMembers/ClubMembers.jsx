@@ -14,7 +14,7 @@ const ClubMembers = () => {
                                 <input className="input join-item w-[200px]" placeholder="Batch-Section(e.g. 28-A)" />
                             </div>
                         </div>
-                        <select className="select join-item">
+                        <select className="select join-item" disabled>
                             <option disabled selected>Shift</option>
                             <option>Day</option>
                             <option>Evening</option>
@@ -25,6 +25,30 @@ const ClubMembers = () => {
                     </div>
                 </form>
             </div>
+            {/* Members Data */}
+            <div className="overflow-x-auto mt-10">
+                <table className="min-w-full border border-gray-200 rounded-lg overflow-hidden">
+                    <thead className="bg-blue-600 text-white text-left text-sm uppercase tracking-wider">
+                        <tr>
+                            <th className="px-6 py-3">No.</th>
+                            <th className="px-6 py-3">Name</th>
+                            <th className="px-6 py-3">Student ID</th>
+                            <th className="px-6 py-3">Contact No.</th>
+                            <th className="px-6 py-3">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody className="bg-white text-gray-700 text-sm divide-y divide-gray-200">
+                        <tr className="hover:bg-gray-100 transition-colors duration-200">
+                            <td className="px-6 py-4">1</td>
+                            <td className="px-6 py-4">John Doe</td>
+                            <td className="px-6 py-4">CSE 02807546</td>
+                            <td className="px-6 py-4">017xxxxxxxx</td>
+                            <td className="px-6 py-4">john@example.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     );
 };
