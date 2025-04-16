@@ -41,8 +41,16 @@ const AddMember = () => {
         const ContactNo = form.contactNo.value;
         const Email = form.email.value;
 
-        const newMember = { Name, Batch, Section, StudentId, ContactNo, Email };
-        console.log(newMember);
+        const newMember = { Name, Batch, StudentId, ContactNo, Email };
+
+        // Sending data to backend
+        fetch('https://pccc-identity-portal-server.onrender.com/clubMembers', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(newMember)
+        })
     }
 
     return (
