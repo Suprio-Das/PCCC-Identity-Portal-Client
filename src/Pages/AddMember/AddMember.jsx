@@ -73,7 +73,7 @@ const AddMember = () => {
                         {/* Email */}
                         <fieldset className="fieldset">
                             <legend className="fieldset-legend text-white">Enter Club Member Email</legend>
-                            <input type="text" className="input w-sm text-black" name="email" placeholder="Type Club Member Section here" />
+                            <input type="email" className="input w-sm text-black" name="email" placeholder="Type Club Member Section here" />
                         </fieldset>
                     </div>
                     <button className="btn add-member-btn w-full mt-5">Add Member</button>
