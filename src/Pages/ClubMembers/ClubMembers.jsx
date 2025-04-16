@@ -71,13 +71,15 @@ const ClubMembers = () => {
                         </tr>
                     </thead>
                     <tbody className="bg-white text-gray-700 text-sm divide-y divide-gray-200">
-                        <tr className="hover:bg-gray-100 transition-colors duration-200">
-                            <td className="px-6 py-4">1</td>
-                            <td className="px-6 py-4">John Doe</td>
-                            <td className="px-6 py-4">CSE 02807546</td>
-                            <td className="px-6 py-4">017xxxxxxxx</td>
-                            <td className="px-6 py-4">john@example.com</td>
-                        </tr>
+                        {
+                            result.map((member, index) => <tr key={member._id} className="hover:bg-gray-100 transition-colors duration-200">
+                                <td className="px-6 py-4">{index + 1}</td>
+                                <td className="px-6 py-4">{member?.Name}</td>
+                                <td className="px-6 py-4">{member?.StudentId}</td>
+                                <td className="px-6 py-4">{member?.ContactNo}</td>
+                                <td className="px-6 py-4">{member?.email}</td>
+                            </tr>)
+                        }
                     </tbody>
                 </table>
             </div>
