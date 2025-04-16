@@ -46,6 +46,12 @@ const router = createBrowserRouter([
                 element: <PrivateRoutes>
                     <AddMember></AddMember>
                 </PrivateRoutes>
+            },
+            {
+                path: '/members',
+                element: <PrivateRoutes>
+                    <h1>Members</h1>
+                </PrivateRoutes>
             }
         ]
     }

@@ -37,6 +37,7 @@ const Navbar = () => {
                                             </ul>
                                         </details>
                                     </li>
+                                    <li><NavLink to="/members">Members</NavLink></li>
                                 </ul>
                             </>
                         )
@@ -62,6 +63,7 @@ const Navbar = () => {
                                     </ul>
                                 </details>
                             </li>
+                            <li><NavLink to="/members">Members</NavLink></li>
                         </ul>
                     )
                 }
