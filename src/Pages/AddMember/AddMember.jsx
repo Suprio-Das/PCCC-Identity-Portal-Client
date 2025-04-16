@@ -16,27 +16,27 @@ const AddMember = () => {
                         {/* Batch */}
                         <fieldset className="fieldset">
                             <legend className="fieldset-legend text-white">Enter Club Member Batch(e.g. 28)</legend>
-                            <input type="number" className="input w-sm text-black" name="name" placeholder="Type Club Member Batch here" />
+                            <input type="number" className="input w-sm text-black" name="batch" placeholder="Type Club Member Batch here" />
                         </fieldset>
                         {/* Section */}
                         <fieldset className="fieldset">
                             <legend className="fieldset-legend text-white">Enter Club Member Section(e.g. A)</legend>
-                            <input type="text" className="input w-sm text-black" name="name" placeholder="Type Club Member Section here" />
+                            <input type="text" className="input w-sm text-black" name="section" placeholder="Type Club Member Section here" />
                         </fieldset>
                         {/* ID */}
                         <fieldset className="fieldset">
                             <legend className="fieldset-legend text-white">Enter Club Member ID(e.g. 02807546)</legend>
-                            <input type="text" className="input w-sm text-black" name="name" placeholder="Type Club Member Section here" />
+                            <input type="text" className="input w-sm text-black" name="studentId" placeholder="Type Club Member Section here" />
                         </fieldset>
                         {/* Contact */}
                         <fieldset className="fieldset">
                             <legend className="fieldset-legend text-white">Enter Club Member Phone(e.g. 01xxxxxxxxx)</legend>
-                            <input type="text" className="input w-sm text-black" name="name" placeholder="Type Club Member Section here" />
+                            <input type="text" className="input w-sm text-black" name="contactNo" placeholder="Type Club Member Section here" />
                         </fieldset>
                         {/* Email */}
                         <fieldset className="fieldset">
                             <legend className="fieldset-legend text-white">Enter Club Member Email</legend>
-                            <input type="text" className="input w-sm text-black" name="name" placeholder="Type Club Member Section here" />
+                            <input type="text" className="input w-sm text-black" name="email" placeholder="Type Club Member Section here" />
                         </fieldset>
                     </div>
                     <button className="btn add-member-btn w-full mt-5">Add Member</button>
