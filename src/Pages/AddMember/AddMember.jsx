@@ -33,8 +33,19 @@ const AddMember = () => {
     // Collecting Form Data
     const handleAddMember = (e) => {
         e.preventDefault();
-        console.log("Add Member form clicked");
+        const form = e.target;
+
+        const Name = form.studentName.value;
+        const Section = form.section.value;
+        const Batch = form.batch.value + "-" + Section;
+        const StudentId = form.studentId.value;
+        const ContactNo = form.contactNo.value;
+        const Email = form.email.value;
+
+        const newMember = { Name, Batch, Section, StudentId, ContactNo, Email };
+        console.log(newMember);
     }
+
     return (
         <div className='min-h-[calc(100vh-130px)] flex flex-col items-center justify-center'>
             {/* Add Member Form */}
@@ -45,7 +56,7 @@ const AddMember = () => {
                         {/* Name */}
                         <fieldset className="fieldset">
                             <legend className="fieldset-legend text-white">Enter Club Member Name</legend>
-                            <input type="text" className="input w-sm text-black" name="name" placeholder="Type Club Member here" />
+                            <input type="text" className="input w-sm text-black" name="studentName" placeholder="Type Club Member here" />
                         </fieldset>
                         {/* Batch */}
                         <fieldset className="fieldset">
