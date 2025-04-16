@@ -2,21 +2,30 @@ import { useState } from "react";
 import { MdConstruction } from "react-icons/md";
 
 const AddMember = () => {
-    const [studentId, setStudentId] = useState("CSE ");
+    const [studentId, setStudentId] = useState("");
+    const [isFocused, setIsFocused] = useState(false);
 
-    const handleStudentIdChange = (e) => {
-        const input = e.target.value;
-
-        if (input.startsWith("CSE ")) {
-            const digitsOnly = input.slice(4).replace(/\D/g, "");
-            setStudentId("CSE " + digitsOnly);
-        } else {
+    const handleFocus = () => {
+        setIsFocused(true);
+        if (!studentId.startsWith("CSE ")) {
             setStudentId("CSE ");
         }
     };
 
-    const handleFocus = () => {
-        if (!studentId.startsWith("CSE ")) {
+    const handleBlur = () => {
+        setIsFocused(false);
+        if (studentId === "CSE ") {
+            setStudentId("");
+        }
+    };
+
+    const handleChange = (e) => {
+        let value = e.target.value;
+
+        if (value.startsWith("CSE ")) {
+            const digits = value.slice(4).replace(/\D/g, "");
+            setStudentId("CSE " + digits);
+        } else {
             setStudentId("CSE ");
         }
     };
@@ -49,9 +58,11 @@ const AddMember = () => {
                                 type="text"
                                 className="input w-sm text-black"
                                 name="studentId"
+                                placeholder={!isFocused ? "Type Club Member ID here" : ""}
                                 value={studentId}
-                                onChange={handleStudentIdChange}
+                                onChange={handleChange}
                                 onFocus={handleFocus}
+                                onBlur={handleBlur}
                             />
                         </fieldset>
                         {/* Contact */}
