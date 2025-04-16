@@ -76,8 +76,24 @@ const ClubMembers = () => {
                                 <td className="px-6 py-4">{index + 1}</td>
                                 <td className="px-6 py-4">{member?.Name}</td>
                                 <td className="px-6 py-4">{member?.StudentId}</td>
-                                <td className="px-6 py-4">{member?.ContactNo}</td>
-                                <td className="px-6 py-4">{member?.email}</td>
+                                <td className="px-6 py-4">
+                                    {
+                                        member?.ContactNo !== "null"
+                                            ?
+                                            member.ContactNo
+                                            :
+                                            "Not Found"
+                                    }
+                                </td>
+                                <td className="px-6 py-4">
+                                    {
+                                        member?.Email !== "null"
+                                            ?
+                                            member.Email
+                                            :
+                                            "Not Found"
+                                    }
+                                </td>
                             </tr>)
                         }
                     </tbody>
