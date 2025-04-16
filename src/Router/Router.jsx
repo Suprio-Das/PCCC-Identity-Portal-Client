@@ -7,6 +7,7 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
 import ViewProfile from "../Pages/ViewProfile/ViewProfile";
 import CommitteeMembers from "../Pages/CommitteeMembers/CommitteeMembers";
 import AddMember from "../Pages/AddMember/AddMember";
+import ClubMembers from "../Pages/ClubMembers/ClubMembers";
 
 const router = createBrowserRouter([
     {
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
             {
                 path: '/members',
                 element: <PrivateRoutes>
-                    <h1>Members</h1>
+                    <ClubMembers></ClubMembers>
                 </PrivateRoutes>
             }
         ]
