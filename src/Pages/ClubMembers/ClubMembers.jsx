@@ -10,16 +10,22 @@ const ClubMembers = () => {
         const batch = form.batch.value;
         const section = form.section.value;
         const formattedBatch = `CSE ${batch}-${section}`;
+        console.log(formattedBatch)
         setSearch(formattedBatch);
+        setResult([]);
     }
 
     useEffect(() => {
         if (search.length > 0) {
             fetch(`http://localhost:5000/batchWiseClubMembers?batch=${search}`)
                 .then(res => res.json())
-                .then(data => setResult(data))
+                .then(data => {
+                    setResult(data)
+                })
         }
     }, [search])
+
+    console.log(result);
 
     return (
         <div className='w-[90%] mx-auto p-5'>
