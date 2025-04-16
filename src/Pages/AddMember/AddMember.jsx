@@ -1,6 +1,25 @@
+import { useState } from "react";
 import { MdConstruction } from "react-icons/md";
 
 const AddMember = () => {
+    const [studentId, setStudentId] = useState("CSE ");
+
+    const handleStudentIdChange = (e) => {
+        const input = e.target.value;
+
+        if (input.startsWith("CSE ")) {
+            const digitsOnly = input.slice(4).replace(/\D/g, "");
+            setStudentId("CSE " + digitsOnly);
+        } else {
+            setStudentId("CSE ");
+        }
+    };
+
+    const handleFocus = () => {
+        if (!studentId.startsWith("CSE ")) {
+            setStudentId("CSE ");
+        }
+    };
     return (
         <div className='min-h-[calc(100vh-130px)] flex flex-col items-center justify-center'>
             {/* Add Member Form */}
@@ -26,7 +45,14 @@ const AddMember = () => {
                         {/* ID */}
                         <fieldset className="fieldset">
                             <legend className="fieldset-legend text-white">Enter Club Member ID(e.g. 02807546)</legend>
-                            <input type="text" className="input w-sm text-black" name="studentId" placeholder="Type Club Member Section here" />
+                            <input
+                                type="text"
+                                className="input w-sm text-black"
+                                name="studentId"
+                                value={studentId}
+                                onChange={handleStudentIdChange}
+                                onFocus={handleFocus}
+                            />
                         </fieldset>
                         {/* Contact */}
                         <fieldset className="fieldset">
