@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const AddMember = () => {
     const [studentId, setStudentId] = useState("");
@@ -51,6 +52,18 @@ const AddMember = () => {
             },
             body: JSON.stringify(newMember)
         })
+            .then(result => {
+                if (result.insertedId) {
+                    toast.success("New Member Added Successfully!", {
+                        position: 'top-right'
+                    })
+                }
+            })
+            .catch(error => {
+                toast.error("Failed to add New Member!", {
+                    position: 'top-right'
+                })
+            })
     }
 
     return (
