@@ -36,7 +36,7 @@ const ClubMembers = () => {
     }, [search])
 
     return (
-        <div className='w-[90%] mx-auto p-5'>
+        <div className='lg:w-[90%] mx-auto p-5'>
             <h1 className='lg:text-2xl font-semibold text-blue-500 flex items-center justify-center gap-2'>Find Batchwise Members Data <BsFillClipboardDataFill /></h1>
 
             {/* Filter */}
@@ -45,7 +45,7 @@ const ClubMembers = () => {
                     <div className="join">
                         <div>
                             <div>
-                                <input type="number" className="input join-item w-[220px]" name="batch" placeholder="Batch-Section(e.g. 28-A)" />
+                                <input type="number" className="input join-item lg:w-[220px] w-[180px]" name="batch" placeholder="Batch-Section(e.g. 28-A)" />
                             </div>
                         </div>
                         <select name="section" className="select join-item" defaultValue="">
