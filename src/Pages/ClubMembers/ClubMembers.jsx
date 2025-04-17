@@ -33,8 +33,6 @@ const ClubMembers = () => {
         }
     }, [search])
 
-    console.log(result);
-
     return (
         <div className='w-[90%] mx-auto p-5'>
             <h1 className='lg:text-2xl font-semibold text-blue-500 flex items-center justify-center gap-2'>Find Batchwise Members Data <BsFillClipboardDataFill /></h1>
@@ -66,6 +64,7 @@ const ClubMembers = () => {
                     </div>
                 </form>
             </div>
+
             {/* Members Data */}
             {
                 result.length > 0 ? <div className="overflow-x-auto mt-10">
