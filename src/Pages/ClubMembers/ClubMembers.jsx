@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { BsFillClipboardDataFill } from "react-icons/bs";
 import NotFoundLottie from '../../assets/NotFoundLottie.json';
 import Lottie from "lottie-react";
+import { exportToExcel } from "./Export";
+
 
 const ClubMembers = () => {
     const [search, setSearch] = useState("");
@@ -64,6 +66,17 @@ const ClubMembers = () => {
                     </div>
                 </form>
             </div>
+
+            {/* Export Button */}
+            {
+                result.length > 0 && (
+                    <div className="flex justify-end mt-5">
+                        <button onClick={() => exportToExcel(result, search)} className="btn btn-sm common-btn text-white">
+                            Export Data
+                        </button>
+                    </div>
+                )
+            }
 
             {/* Members Data */}
             {
