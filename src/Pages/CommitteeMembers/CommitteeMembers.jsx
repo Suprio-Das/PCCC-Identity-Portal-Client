@@ -115,6 +115,7 @@ const CommitteeMembers = () => {
                                                 <legend className="fieldset-legend">Update Phone</legend>
                                                 <input type="text" className="input w-full" defaultValue={member.ContactNo} name='phone' />
                                             </fieldset>
+                                            <input type="submit" value="Update Info" className='w-full btn mt-2' />
                                         </form>
                                     </div>
                                     <div className="modal-action">
