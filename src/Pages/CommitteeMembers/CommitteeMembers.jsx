@@ -53,7 +53,17 @@ const CommitteeMembers = () => {
             contactNo
         }
 
-        console.log(updatedCommitteeInfo);
+        fetch(`http://localhost:5000/committeeMembers/${memberId}`, {
+            method: "PUT",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(updatedCommitteeInfo)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
     };
 
     const handleDelete = id => {
