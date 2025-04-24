@@ -93,7 +93,12 @@ const CommitteeMembers = () => {
                                             {/* Name */}
                                             <fieldset className="fieldset">
                                                 <legend className="fieldset-legend">Update Name</legend>
-                                                <input type="text" className="input w-full" defaultValue={member.Name} />
+                                                <input type="text" className="input w-full" defaultValue={member.Name} name='name' />
+                                            </fieldset>
+                                            {/* Designation */}
+                                            <fieldset className="fieldset">
+                                                <legend className="fieldset-legend">Update Designation</legend>
+                                                <input type="text" className="input w-full" defaultValue={member.Designation} name='designation' />
                                             </fieldset>
                                         </form>
                                     </div>
