@@ -75,7 +75,7 @@ const CommitteeMembers = () => {
                                 </p>
 
                                 <div className='mt-6 flex gap-4 justify-center'>
-                                    <button onClick={() => handleUpdate(member._id)} className='bg-blue-500 hover:bg-blue-600 text-white cursor-pointer px-4 py-2 rounded-lg transition'>
+                                    <button onClick={() => document.getElementById(`${member._id}`).showModal()} className='bg-blue-500 hover:bg-blue-600 text-white cursor-pointer px-4 py-2 rounded-lg transition'>
                                         Update
                                     </button>
                                     <button onClick={() => handleDelete(member._id)} className='bg-red-500 hover:bg-red-600 text-white cursor-pointer px-4 py-2 rounded-lg transition'>
@@ -83,6 +83,21 @@ const CommitteeMembers = () => {
                                     </button>
                                 </div>
                             </div>
+
+                            {/* Update Modal */}
+                            <dialog id={`${member._id}`} className="modal modal-bottom sm:modal-middle">
+                                <div className="modal-box">
+                                    <h3 className="font-bold text-lg">Hello!</h3>
+                                    <p className="py-4">Press ESC key or click the button below to close</p>
+                                    <div className="modal-action">
+                                        <form method="dialog">
+                                            {/* if there is a button in form, it will close the modal */}
+                                            <button className="btn">Close</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </dialog>
+
                         </div>
                     ))
                 }

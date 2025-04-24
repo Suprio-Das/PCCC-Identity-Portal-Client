@@ -27,7 +27,7 @@ const ClubMembers = () => {
 
     useEffect(() => {
         if (search.length > 0) {
-            fetch(`http://localhost:5000/batchWiseClubMembers?batch=${search}`)
+            fetch(`https://pccc-identity-portal-server.onrender.com/batchWiseClubMembers?batch=${search}`)
                 .then(res => res.json())
                 .then(data => {
                     setResult(data)

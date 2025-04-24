@@ -45,7 +45,7 @@ const AddMember = () => {
         const newMember = { Name, Batch, StudentId, ContactNo, Email };
 
         // Sending data to backend
-        fetch('http://localhost:5000/clubMembers', {
+        fetch('https://pccc-identity-portal-server.onrender.com/clubMembers', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
