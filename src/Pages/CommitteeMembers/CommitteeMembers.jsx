@@ -105,6 +105,11 @@ const CommitteeMembers = () => {
                                                 <legend className="fieldset-legend">Update Batch</legend>
                                                 <input type="text" className="input w-full" defaultValue={member.Batch} name='Batch' />
                                             </fieldset>
+                                            {/* ID */}
+                                            <fieldset className="fieldset">
+                                                <legend className="fieldset-legend">Update ID</legend>
+                                                <input type="text" className="input w-full" defaultValue={member.StudentId} name='id' />
+                                            </fieldset>
                                         </form>
                                     </div>
                                     <div className="modal-action">
