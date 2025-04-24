@@ -103,7 +103,7 @@ const CommitteeMembers = () => {
                                             {/* Batch */}
                                             <fieldset className="fieldset">
                                                 <legend className="fieldset-legend">Update Batch</legend>
-                                                <input type="text" className="input w-full" defaultValue={member.Batch} name='Batch' />
+                                                <input type="text" className="input w-full" defaultValue={member.Batch} name='batch' />
                                             </fieldset>
                                             {/* ID */}
                                             <fieldset className="fieldset">
