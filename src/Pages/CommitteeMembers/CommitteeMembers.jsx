@@ -37,7 +37,9 @@ const CommitteeMembers = () => {
 
     const handleUpdate = e => {
         e.preventDefault();
-        console.log("Update Function Clicked")
+        const form = e.target;
+        const memberId = form.memberId.value;
+        console.log(memberId);
     };
 
     const handleDelete = id => {
@@ -90,7 +92,7 @@ const CommitteeMembers = () => {
                                     <div>
                                         <form onSubmit={handleUpdate}>
                                             {/* ID field */}
-                                            <input type="text" defaultValue={member._id} name="id" className="hidden" />
+                                            <input type="text" defaultValue={member._id} name="memberId" className="hidden" />
                                             {/* Name */}
                                             <fieldset className="fieldset">
                                                 <legend className="fieldset-legend">Update Name</legend>
