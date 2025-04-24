@@ -39,7 +39,21 @@ const CommitteeMembers = () => {
         e.preventDefault();
         const form = e.target;
         const memberId = form.memberId.value;
-        console.log(memberId);
+        const name = form.name.value;
+        const designation = form.designation.value;
+        const batch = form.batch.value;
+        const studentId = form.studentId.value;
+        const contactNo = form.contactNo.value;
+
+        const updatedCommitteeInfo = {
+            name,
+            designation,
+            batch,
+            studentId,
+            contactNo
+        }
+
+        console.log(updatedCommitteeInfo);
     };
 
     const handleDelete = id => {
@@ -111,12 +125,12 @@ const CommitteeMembers = () => {
                                             {/* ID */}
                                             <fieldset className="fieldset">
                                                 <legend className="fieldset-legend">Update ID</legend>
-                                                <input type="text" className="input w-full" defaultValue={member.StudentId} name='id' />
+                                                <input type="text" className="input w-full" defaultValue={member.StudentId} name='studentId' />
                                             </fieldset>
                                             {/* Phone */}
                                             <fieldset className="fieldset">
                                                 <legend className="fieldset-legend">Update Phone</legend>
-                                                <input type="text" className="input w-full" defaultValue={member.ContactNo} name='phone' />
+                                                <input type="text" className="input w-full" defaultValue={member.ContactNo} name='contactNo' />
                                             </fieldset>
                                             <input type="submit" value="Update Info" className='w-full btn mt-2 common-btn' />
                                         </form>
