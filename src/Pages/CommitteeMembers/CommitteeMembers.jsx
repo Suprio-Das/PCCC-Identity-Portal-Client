@@ -35,10 +35,9 @@ const CommitteeMembers = () => {
         return indexA - indexB;
     });
 
-    const handleUpdate = id => {
-        toast.info('Feature is in progress!', {
-            position: 'top-center'
-        });
+    const handleUpdate = e => {
+        e.preventDefault();
+        console.log("Update Function Clicked")
     };
 
     const handleDelete = id => {
@@ -89,7 +88,9 @@ const CommitteeMembers = () => {
                                 <div className="modal-box">
                                     <h3 className="font-bold text-lg">Update <span className='text-blue-500'>{member.Name}</span></h3>
                                     <div>
-                                        <form>
+                                        <form onSubmit={handleUpdate}>
+                                            {/* ID field */}
+                                            <input type="text" defaultValue={member._id} name="id" className="hidden" />
                                             {/* Name */}
                                             <fieldset className="fieldset">
                                                 <legend className="fieldset-legend">Update Name</legend>
