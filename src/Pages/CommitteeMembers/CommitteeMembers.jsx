@@ -115,13 +115,13 @@ const CommitteeMembers = () => {
                                                 <legend className="fieldset-legend">Update Phone</legend>
                                                 <input type="text" className="input w-full" defaultValue={member.ContactNo} name='phone' />
                                             </fieldset>
-                                            <input type="submit" value="Update Info" className='w-full btn mt-2' />
+                                            <input type="submit" value="Update Info" className='w-full btn mt-2 common-btn' />
                                         </form>
                                     </div>
                                     <div className="modal-action">
                                         <form method="dialog">
                                             {/* if there is a button in form, it will close the modal */}
-                                            <button className="btn">Close</button>
+                                            <button className="btn common-btn">Close</button>
                                         </form>
                                     </div>
                                 </div>
